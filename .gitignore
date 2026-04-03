@@ -22,3 +22,33 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+const phones = [
+    {
+        name: "iPhone 14 Pro",
+        image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-family-hero",
+        specs: "6.1-inch, A16 Bionic, 128GB"
+    },
+    {
+        name: "Samsung Galaxy S23",
+        image: "https://images.samsung.com/is/image/samsung/p6pim/levant/2202/gallery/levant-galaxy-s23-s911-202301-frontgreen-thumb-531022616",
+        specs: "6.1-inch, Snapdragon 8 Gen 2, 256GB"
+    },
+    {
+        name: "Google Pixel 8",
+        image: "https://store.google.com/product-images/pixel-8.jpg",
+        specs: "6.2-inch, Google Tensor G3, 128GB"
+    }
+];
+
+const phoneList = document.getElementById('phoneList');
+
+phones.forEach(phone => {
+    const card = document.createElement('div');
+    card.className = 'phone-card';
+    card.innerHTML = `
+        <img src="${phone.image}" alt="${phone.name}">
+        <h3>${phone.name}</h3>
+        <p>${phone.specs}</p>
+    `;
+    phoneList.appendChild(card);
+});
